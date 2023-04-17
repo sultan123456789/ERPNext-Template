@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custome Profile UI</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<style>
+		body{
+
+      background:#ffffff;
+		}
+    body {
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+			color: #333;
+		}
+		
+		main {
+			margin: 20px;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+		
+		section {
+			margin-bottom: 20px;
+		}
+		
+		h2 {
+			
+			
+			color: #17a2b8;
+		}
+		
+		p, li {
+			margin-bottom: 10px;
+			color: #555;
+		}
+		.our-team{
+			padding: 30px 0 40px;
+			background: #fff;
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+			 border: 3px solid #17a2b8 ;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      max-height: 450px;
+     
+      
+		}
+
+		.our-team .pic{
+			display: inline-block;
+			width: 130px;
+			height: 130px;
+			margin-bottom: 50px;
+			/*background:#ff00ac;*/
+			position: relative;
+			z-index: 1;
+		}
+
+		.our-team .pic:before
+		{
+			content: "";
+			width: 100%;
+			background: #17a2b8;
+			position: absolute;
+			bottom: 135%;
+			right: 0;
+			left: 0; 
+			transform: scale(3);
+			transition: all 0.3s linear 0s;
+		}
+
+		.our-team:hover .pic:before
+		{
+			height: 100%;
+		}
+
+		.our-team .pic:after
+		{
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background: #17a2b8;
+			position: absolute;
+			top: 0;
+			left: 0; 
+			z-index: -1;
+		}
+
+		.our-team .pic img{
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+			transform: scale(1);
+			transition: all 0.9s ease 0s;
+		}
+
+		.our-team:hover .pic img
+		{
+			box-shadow: 0 0 0 14px #17a2b8;
+			transform: scale(0.7);
+		}
+
+		.our-team .team-content
+		{
+			margin-bottom: 30px;
+		}
+		
+		.our-team .title{
+			font-size: 16px;
+			font-weight: 700;
+			color:#17a2b8;
+			letter-spacing: 0px;
+			text-transform: capitalize;
+			margin-bottom: 5px;
+		}
+
+		.our-team .post{
+			display: block;
+			font-size: 15px;
+			color:#17a2b8;
+			text-transform: capitalize;
+		}
+
+		.our-team .social{
+			width: 100%;
+			padding:0;
+			margin:0;
+			background: #17a2b8;
+			position: absolute;
+			bottom: -100px;
+			left:0;
+			transition: all 0.5 ease 0s;
+		}
+
+		.our-team:hover .social{
+			bottom:0;
+		}
+
+		.our-team .social li{
+			display: inline-block;
+		}
+
+		.our-team .social li a{
+			display: block;
+			padding:10px;
+			font-size: 17px;
+			color:#fff;
+			transition: all 0.3s ease 0s;
+		}
+
+		.our-team .social li a:hover{
+			color:#17a2b8;
+			background: #f7f5ec;
+			text-decoration: none;
+			
+		}
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      color: white;
+      
+    }
+    li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+	.table-sortable{
+			width: 100%;
+	}
+    
+	.table-sortable th {
+		cursor: pointer;
+		color: #17a2b8;
+		padding: 10px 10px;
+		position: center;
+		margin: 120px;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 28px;	
+			
+			
+	}
+	.table-sortable td {
+		cursor: pointer;
+		color: #17a2b8;
+		padding: 10px 10px;
+		position: center;
+		margin: 120px;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-align: center;
+			font-size: 18px;
+			
+			
+			
+	}
+
+	.table-sortable .no {
+		cursor: pointer;
+		color: #17a2b8;
+		padding: 10px 10px;
+		position: center;
+		
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			text-align: center;
+			
+			
+			
+	}
+	
+	
+	.table-sortable .th-sort-asc::after {
+		content: "\25b4";
+	}
+	
+	.table-sortable .th-sort-desc::after {
+		content: "\25be";
+	}
+	
+	.table-sortable .th-sort-asc::after,
+	.table-sortable .th-sort-desc::after {
+		margin-left: 5px;
+	}
+	
+	.table-sortable .th-sort-asc,
+	.table-sortable .th-sort-desc {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	</style>
+</head>	
+<body>
+	
+	
+<body>
+<h2>Publication</h2>
+	<main>	
+	
+		<section>
+	
+      <div>
+		<h2>Journal</h2>
+        
+		<table class="table-sortable">
+			<thead>
+				<tr>
+					<th class="no">Rank</th>
+					<th>Name</th>
+					<th>Year</th>
+					<th>Title</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				
+				<tr>
+					<td>Sinta 4</td>
+					<td>Dom</td>
+					<td>35</td>
+					<td>Web Developer</td>
+				</tr>
+				<tr>
+					<td>Sinta 3</td>
+					<td>Dom</td>
+					<td>35</td>
+					<td>Web Developer</td>
+				</tr>
+				<tr>
+					<td>Sinta 2</td>
+					<td>Dom</td>
+					<td>35</td>
+					<td>Web Developer</td>
+				</tr>
+				<tr>
+					<td>Sinta 1</td>
+					<td>Rebecca</td>
+					<td>29</td>
+					<td>Teacher</td>
+				</tr>
+				<tr>
+					<td>Scopus Q5</td>
+					<td>John</td>
+					<td>30</td>
+					<td>Civil Engineer</td>
+				</tr>
+				<tr>
+					<td>Scopus Q4</td>
+					<td>Andre</td>
+					<td>20</td>
+					<td>Dentist</td>
+				</tr>
+				<tr>
+					<td>Scopus Q3</td>
+					<td>Andre</td>
+					<td>20</td>
+					<td>Dentist</td>
+				</tr>
+				<tr>
+					<td>Scopus Q2</td>
+					<td>Andre</td>
+					<td>20</td>
+					<td>Dentist</td>
+				</tr>
+				<tr>
+					<td>Scopus Q1</td>
+					<td>Andre</td>
+					<td>20</td>
+					<td>Dentist</td>
+				</tr>
+				
+				
+			</tbody>
+		</table>
+	
+		<script>/**
+			* Sorts a HTML table.
+			*
+			* @param {HTMLTableElement} table The table to sort
+			* @param {number} column The index of the column to sort
+			* @param {boolean} asc Determines if the sorting will be in ascending
+			*/
+		   function sortTableByColumn(table, column, asc = true) {
+			   const dirModifier = asc ? 1 : -1;
+			   const tBody = table.tBodies[0];
+			   const rows = Array.from(tBody.querySelectorAll("tr"));
+		   
+			   // Sort each row
+			   const sortedRows = rows.sort((a, b) => {
+				   const aColText = a.querySelector(`td:nth-child(${column + 1})`).textContent.trim();
+				   const bColText = b.querySelector(`td:nth-child(${column + 1})`).textContent.trim();
+		   
+				   return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+			   });
+		   
+			   // Remove all existing TRs from the table
+			   while (tBody.firstChild) {
+				   tBody.removeChild(tBody.firstChild);
+			   }
+		   
+			   // Re-add the newly sorted rows
+			   tBody.append(...sortedRows);
+		   
+			   // Remember how the column is currently sorted
+			   table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+			   table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-asc", asc);
+			   table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-desc", !asc);
+		   }
+		   
+		   document.querySelectorAll(".table-sortable th").forEach(headerCell => {
+			   headerCell.addEventListener("click", () => {
+				   const tableElement = headerCell.parentElement.parentElement.parentElement;
+				   const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+				   const currentIsAscending = headerCell.classList.contains("th-sort-asc");
+		   
+				   sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
+			   });
+		   });
+		   </script>
+   	</section>
+    
+	</main>
+  
+ 
+  
+ 
+</body>
+
+
+	</div>
+</body>
+</html>

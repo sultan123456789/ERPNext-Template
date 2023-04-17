@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belajar CSS</title>
+<style>
+
+	body{
+		padding: 5px;
+		
+	}
+	img {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		margin-left:40px;
+		margin-right: 40px;
+	  }
+
+	.row > .column {
+		padding: 10px 10px;
+		margin: 10px 10px;
+	  }
+	h1{
+		color: #17a2b8;
+		text-align: center;
+		font-size: 50px;
+	}
+	  
+	  .row:after {
+		content: "";
+		display: table;
+		clear: both;
+	  }
+	  
+	  /* Create four equal columns that floats next to eachother */
+	  .column {
+		float: center;
+		width: 25%;
+	  }
+	  
+	  /* The Modal (background) */
+	 
+	  main {
+		margin: 20px;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+	}
+	
+	section {
+		margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	}
+</style>
+</head>
+<body>
+ <!-- Images used to open the lightbox -->
+ <main>
+	<section>
+	
+		<h1>Sponsorship</h1>
+		<div class="column">
+			<img src="https://erp.hcm-lab.id/files/its.png" onclick="openModal();currentSlide(4)" class="hover-shadow" height="250" width="250px">
+		</div>
+		<div class="column">
+			<img src="https://erp.hcm-lab.id/files/Logo_PENS%20(2).png" width="250px" height="250px" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="https://erp.hcm-lab.id/files/77cbb1fa9a4f2b1c978859c8a5663c25.jpg" height="250px" width="250px" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="https://erp.hcm-lab.id/files/UNUSA%20HD.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" height="250" width="250px">
+		</div>
+
+
+		
+		<div class="column" >
+			<img src="https://erp.hcm-lab.id/files/1200px-Keio_University_emblem.svg.png" onclick="openModal();currentSlide(4)" class="hover-shadow" height="250" width="250px" >
+		</div>
+		<div class="column">
+			<img src="https://www.science.okayama-u.ac.jp/en/wp-content/uploads/2022/09/Okayama-u.jpg" width="250px" height="250px" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="https://societo.co.id/images/logo-ichil.png" height="250px" width="250px" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="https://1000logos.net/wp-content/uploads/2016/11/Cisco-logo.png" onclick="openModal();currentSlide(3)" class="hover-shadow" height="250" width="250px">
+		</div>
+
+  
+		</section>
+	</main>
+ 
+</body>
+</html>
